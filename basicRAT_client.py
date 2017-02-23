@@ -69,6 +69,7 @@ def main():
         elif cmd == 'persistence':
             results = persistence.run(plat)
 
+        # fix this in devel
         # elif cmd == 'rekey':
         #    client.dh_key = crypto.diffiehellman(client.conn)
         #    continue
