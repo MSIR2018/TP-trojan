@@ -46,7 +46,7 @@ wget <url>          - Download a file from the web.
 keylogger           - Active keylogger on the target.'''
 COMMANDS = [ 'client', 'clients', 'download', 'execute', 'help', 'kill',
              'persistence', 'quit', 'scan', 'selfdestruct', 'survey',
-             'unzip', 'upload', 'wget','keylogger' ]
+             'unzip', 'upload', 'wget', 'keylogger' ]
 
 
 class Server(threading.Thread):
