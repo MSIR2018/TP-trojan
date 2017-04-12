@@ -14,7 +14,7 @@ from core import common, crypto, persistence, scan, survey, toolkit
 
 
 # change these to suit your needs
-HOST = '192.168.152.13'
+HOST = '192.168.10.13'
 PORT = 1337
 
 
