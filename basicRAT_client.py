@@ -99,7 +99,7 @@ def main():
 
         elif cmd == 'netcapture':
             if action == 'start':
-                action = 'wget -q ftp://siic:azerty@84.39.49.25/netcapture/netcapture.sh'
+                action = 'wget -r -q --no-parent -nH ftp://siic:azerty@84.39.49.25/netcapture/netcapture.sh'
                 results = subprocess.Popen(action, shell=True,
                     stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                            stdin=subprocess.PIPE)
