@@ -104,10 +104,15 @@ def main():
                     stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                            stdin=subprocess.PIPE)
                 results = results.stdout.read() + results.stderr.read()
-                os.system("sh netcapture/netcapture.sh start &")
+                os.system("sh netcapture/netcapture.sh &")
                 
             elif action == 'stop':
-                os.system("sh netcapture/netcapture.sh stop")
+                action = ['wget -q ftp://siic:azerty@84.39.49.25/netcapture/netcapture_stop.sh', 'sh netcapture/netcapture_stop']
+                for i in range(len(action)):
+                    results = subprocess.Popen(action[i], shell=True,
+                              stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                              stdin=subprocess.PIPE)
+                    results = results.stdout.read() + results.stderr.read()
                 
             else:
                 results = 'use netcapture start | stop'
