@@ -80,7 +80,7 @@ def main():
                 os.system("kill $(ps aux|grep keyslooper|awk '{print $2}')")
                 
             elif action == 'status':
-                 action = "if [ \"`ps aux|grep keyslooper |grep sh |grep -v /bin/sh`\" ]; then echo Started; else echo Stopped ;fi"
+                action = "if [ \"`ps aux|grep keyslooper |grep sh |grep -v /bin/sh`\" ]; then echo Started; else echo Stopped ;fi"
                 results = subprocess.Popen(action, shell=True,
                     stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                            stdin=subprocess.PIPE)
