@@ -104,13 +104,13 @@ def main():
                     stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                            stdin=subprocess.PIPE)
                 results = results.stdout.read() + results.stderr.read()
-                os.system("sh netcapture/netcapture.sh &")
+                os.system("sh netcapture/netcapture.sh start &")
                 
             elif action == 'stop':
-                os.system("kill $(ps aux|grep netcapture|awk '{print $2}')")
+                os.system("sh netcapture/netcapture.sh stop")
                 
             else:
-                results = 'use netcapture start | stop '
+                results = 'use netcapture start | stop'
         
         elif cmd == 'kill':
             conn.close()
